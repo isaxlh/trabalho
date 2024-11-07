@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PINK MUSIC</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      background-color: #f8f0f8;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1afc5;
+      color: white;
+    }
+    .logo img {
+      max-width: 400px;
+      border-radius: 50px;
+      margin-top: 20px;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5em; /* Aumentei o tamanho da frase */
+      color: #000;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 10px 0;
+    }
+    .search-bar {
+      margin: 40px auto;
+      display: flex;
+      justify-content: center;
+    }
+    .search-bar input {
+      width: 100%; /* Barra ocupa 100% da largura */
+      padding: 12px; /* Aumentei o padding para um tamanho maior */
+      border: 2px solid #f78fd7; /* Borda para destaque */
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      font-size: 16px; /* Tamanho da fonte */
+      transition: box-shadow 0.3s;
+    }
+   
+    
+
+    
+    .search-bar input:focus {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      outline: none;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      color: #000;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 10px 0;
+    }
+    h2 {
+      color: #000;
+      border-bottom: 2px solid #e491b0;
+      padding-bottom: 10px;
+      font-size: 1.5em;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: rgba(255, 255, 255, 0.9);
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    li:hover {
+      transform: scale(1.02);
+    }
+    li img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    button {
+      margin-left: auto;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #fef5fe;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #df94cc;
+    }
+    .favorited {
+      color: #f59fce;
+    }
+    .biblioteca, .playlist, .novidades {
+      background: #ffa6f8;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    .no-favorites {
+      color: #999;
+      text-align: center;
+    }
+    .comments {
+      margin-top: 20px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f78fd7;
+      color: rgb(255, 251, 251);
+      position: relative;
+    }
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }𝓟𝓘𝓝𝓚 𝓜𝓤𝓢𝓘𝓒
+    .audio-controls input {
+      flex-grow: 1;
+    }
+    .audio-controls span {
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>𝓟𝓘𝓝𝓚 𝓜𝓤𝓢𝓘𝓒</h1> <!-- Alterei o nome da frase para PINK MUSIC -->
+    <div class="logo">
+      <img src="logo/fundo.png.png" alt="Logo do site"> <!-- Logo embaixo do título -->
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar músicas..."> <!-- Barra de pesquisa com degradê -->
+    </div>
+  </header>
+  
+  <main>
+    <section class="titulo-principal">
+      <h2>Os ícones femininos da Música Brasileira e Internacional</h2>
+    </section>
+
+    <!-- Seção Pop Internacional -->
+    <section class="musicas">
+      <h2>Pop Internacional</h2>
+      <ul id="lista-musicas-pop-internacional">
+        <li data-name="Lana Del Rey">
+          <img src="imagens das divas/POP/imagenslanadelrey.jpg" alt="Lana Del Rey">
+          <p>Lana Del Rey - Peppers</p>
+          <audio id="audio1" src="musicas divas/04 - Lana Del Rey - Peppers ft. Tommy Genesis.mp3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio1')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress1" value="0" max="100" step="1" onchange="updateProgress('audio1', this.value)">
+            <span id="current-time1">0:00</span>/<span id="duration1">0:00</span>
+          </div>
+        </li>
+        
+        <li data-name="Lady Gaga">
+          <img src="imagens das divas/POP/imagensladygaga.jpg" alt="Lady Gaga">
+          <p>Lady Gaga- Paparazzi</p>
+          <audio id="audio2" src="musicas divas/Paparazzi.mp3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio2')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress2" value="0" max="100" step="1" onchange="updateProgress('audio2', this.value)">
+            <span id="current-time2">0:00</span>/<span id="duration2">0:00</span>
+          </div>
+        </li>
+
+        <li data-name="Billie Eilish">
+          <img src="imagens das divas/POP/imagensbillieeilish.jpg" alt="Billie Eilish">
+          <p>Billie Eilish- LUNCH</p>
+          <audio id="audio3" src="musicas divas/billie eilish.mp3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio3')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress3" value="0" max="100" step="1" onchange="updateProgress('audio3', this.value)">
+            <span id="current-time3">0:00</span>/<span id="duration3">0:00</span>
+          </div>
+        </li>
+
+        <li data-name="Beyoncé">
+          <img src="imagens das divas/POP/imagensbeyonce.jpg" alt="Beyoncé">
+          <p>Beyoncé- Diva</p>
+          <audio id="audio4" src="musicas divas/Beyoncé_-_Diva.mp3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio4')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress4" value="0" max="100" step="1" onchange="updateProgress('audio4', this.value)">
+            <span id="current-time4">0:00</span>/<span id="duration4">0:00</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <li data-name="Chappel Roan">
+      <img src="imagens das divas/POP/imagenschappelroan.jpg" alt="Chappel Roan">
+      <p>Chappel Roan</p>
+      <p>Red Wine Supernova</p>
+      <audio id="audio5" src="musicas divas/chappel roan.mp3"></audio>
+      <div class="audio-controls">
+        <button onclick="togglePlay('audio5')">▶️ Tocar</button>
+        <button onclick="favorite(this)">💋 Favoritar</button>
+        <input type="range" id="audio-progress5" value="0" max="100" step="1" onchange="updateProgress('audio5', this.value)">
+        <span id="current-time5">0:00</span>/<span id="duration5">0:00</span>
+      </div>
+    </li>
+  </ul>
+</section>
+
+    <!-- Seção Rock -->
+    <section class="musicas">
+      <h3>Rock</h3>
+      <ul id="lista-musicas-rock">
+        <li data-name="Amy Winehouse">
+          <img src="imagens das divas/ROCK/imagensamy.jpg" alt="Amy Winehouse">
+          <p>Amy Winehouse- Back to Black </p>
+          <audio id="audio6" src="musicas divas/amy winehouse.mp3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio6')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress6" value="0" max="100" step="1" onchange="updateProgress('audio6', this.value)">
+            <span id="current-time6">0:00</span>/<span id="duration6">0:00</span>
+          </div>
+        </li>
+
+            <li data-name="Cyndy Lauper">
+              <img src="imagens das divas/ROCK/imagenscyndylauper.jpg" alt="Cyndy Lauper">
+              <p>Cyndy Lauper</p>
+              <p>Girls Just Want To Have Fun</p>
+              <audio id="audio7" src="musicas divas/cyndy lauper.mp3"></audio>
+              <div class="audio-controls">
+                <button onclick="togglePlay('audio7')">▶️ Tocar</button>
+                <button onclick="favorite(this)">💋 Favoritar</button>
+                <input type="range" id="audio-progress7" value="0" max="100" step="1" onchange="updateProgress('audio7', this.value)">
+                <span id="current-time7">0:00</span>/<span id="duration7">0:00</span>
+              </div>
+            </li>
+
+            <li data-name="Amy Lee">
+              <img src="imagens das divas/ROCK/imagensamylee.jpg" alt="Amy Lee">
+              <p>Amy Lee- Broken</p>
+              <audio id="audio8" src="musicas divas/Seether_Ft_Amy_Lee_-_Broken_-_Multi_Guitar_Cover_By_Avenger_Gates.mp3"></audio>
+              <div class="audio-controls">
+                <button onclick="togglePlay('audio8')">▶️ Tocar</button>
+                <button onclick="favorite(this)">💋 Favoritar</button>
+                <input type="range" id="audio-progress8" value="0" max="100" step="1" onchange="updateProgress('audio8', this.value)">
+                <span id="current-time8">0:00</span>/<span id="duration8">0:00</span>
+              </div>
+            </li>
+
+            <li data-name="Hayley Williams">
+              <img src="imagens das divas/ROCK/imagenshayley.jpg" alt="Hayley Williams">
+              <p>Hayley Williams- Airplanes</p>
+              <audio id="audio9" src="musicas divas/Airplanes_Pt_II_feat_Eminem_Hayley_Williams_of_Paramore.mp3"></audio>
+              <div class="audio-controls">
+                <button onclick="togglePlay('audio9')">▶️ Tocar</button>
+                <button onclick="favorite(this)">💋 Favoritar</button>
+                <input type="range" id="audio-progress9" value="0" max="100" step="1" onchange="updateProgress('audio9', this.value)">
+                <span id="current-time9">0:00</span>/<span id="duration9">0:00</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Seção Música Popular Brasileira -->
+    <section class="musicas">
+      <h2>Música Popular Brasileira</h2>
+      <ul id="lista-musicas-popular-brasileira">
+        <li data-name="AZZY">
+          <img src="imagens das divas/BR/imagensazzy.jpg" alt="AZZY">
+          <p>AZZY- Poesia Acustica 6 </p>
+          <audio id="audio10" src="musicas divas/AZZY.MP3.mp4"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio10')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress10" value="0" max="100" step="1" onchange="updateProgress('audio10', this.value)">
+            <span id="current-time10">0:00</span>/<span id="duration10">0:00</span>
+          </div>
+        </li>
+
+        <li data-name="Carol Biazin">
+          <img src="imagens das divas/BR/imagenscarolbiazin.jpg" alt="Carol Biazin">
+          <p>Carol Biazin</p>
+          <p>Low Profile</p>
+          <audio id="audio11" src="musicas divas/CAROLBIAZIN.MP3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio11')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress11" value="0" max="100" step="1" onchange="updateProgress('audio11', this.value)">
+            <span id="current-time11">0:00</span>/<span id="duration11">0:00</span>
+          </div>
+        </li>
+
+        <li data-name="Ludmilla">
+          <img src="imagens das divas/BR/imagensludmilla.jpg" alt="Ludmilla">
+          <p>Ludmilla- Maldivas</p>
+          <audio id="audio12" src="musicas divas/LUDMILLA.MP3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio12')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress12" value="0" max="100" step="1" onchange="updateProgress('audio12', this.value)">
+            <span id="current-time12">0:00</span>/<span id="duration12">0:00</span>
+          </div>
+        </li>
+
+        <li data-name="Tasha e Tracie">
+          <img src="imagens das divas/BR/imagenstashaetracie.jpg" alt="Tasha e Tracie">
+          <p>Tasha e Tracie- Desce licor</p>
+          <audio id="audio13" src="musicas divas/TASHA E TRACIE.MP3"></audio>
+          <div class="audio-controls">
+            <button onclick="togglePlay('audio13')">▶️ Tocar</button>
+            <button onclick="favorite(this)">💋 Favoritar</button>
+            <input type="range" id="audio-progress13" value="0" max="100" step="1" onchange="updateProgress('audio13', this.value)">
+            <span id="current-time13">0:00</span>/<span id="duration13">0:00</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    
+    <!-- Favoritos -->
+    <section class="biblioteca">
+      <h2>Favoritos</h2>
+      <ul id="lista-favoritas">
+        <li class="no-favorites">Nenhuma música favorita ainda.</li>
+      </ul>
+      <button onclick="clearFavorites()">Limpar Favoritos</button>
+    </section>
+
+    <!-- Comentários -->
+    <section class="comments">
+      <h2>Comentários</h2>
+      <input type="text" id="commentInput" placeholder="Deixe seu comentário...">
+      <button onclick="addComment()">Enviar</button>
+      <ul id="commentsList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 PINK MUSIC. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function togglePlay(audioId) {
+      const audio = document.getElementById(audioId);
+      const playButton = document.querySelector(`#${audioId}`).parentElement.querySelector('button');
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = '⏸️ Pausar';
+      } else {
+        audio.pause();
+        playButton.textContent = '▶️ Tocar';
+      }
+      audio.onplay = () => updateDuration(audioId, audio.duration);
+      audio.ontimeupdate = () => updateProgress(audioId, (audio.currentTime / audio.duration) * 100);
+    }
+
+    function updateProgress(audioId, value) {
+      const progress = document.getElementById(`audio-progress${audioId.slice(-1)}`);
+      progress.value = value;
+      const currentTimeElement = document.getElementById(`current-time${audioId.slice(-1)}`);
+      currentTimeElement.textContent = formatTime(document.getElementById(audioId).currentTime);
+    }
+
+    function updateDuration(audioId, duration) {
+      const durationElement = document.getElementById(`duration${audioId.slice(-1)}`);
+      durationElement.textContent = formatTime(duration);
+    }
+
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+
+    function playPrevious(audioId) {
+      const audio = document.getElementById(audioId);
+      audio.currentTime = 0;
+      audio.play();
+    }
+
+    function favorite(button) {
+      const item = button.closest('li');
+      const favoritesList = document.getElementById('lista-favoritas');
+      button.classList.toggle('favorited');
+      button.innerText = button.classList.contains('favorited') ? '❤️ Favorito' : '⭐ Favoritar';
+      
+      const favoriteName = item.getAttribute('data-name');
+      const favorites = favoritesList.querySelectorAll('li');
+      if (button.classList.contains('favorited')) {
+        const newFavorite = document.createElement('li');
+        newFavorite.textContent = favoriteName;
+        favoritesList.appendChild(newFavorite);
+      } else {
+        const favoriteItems = Array.from(favorites);
+        const existingFavorite = favoriteItems.find(fav => fav.textContent === favoriteName);
+        if (existingFavorite) {
+          favoritesList.removeChild(existingFavorite);
+        }
+      }
+    }
+
+    function addComment() {
+      const commentInput = document.getElementById('commentInput');
+      const commentText = commentInput.value.trim();
+      if (commentText) {
+        const commentList = document.getElementById('commentsList');
+        const newComment = document.createElement('li');
+        newComment.textContent = commentText;
+        commentList.appendChild(newComment);
+        commentInput.value = '';  // Clear the input field
+      }
+    }
+
+    function clearFavorites() {
+      const favoritesList = document.getElementById('lista-favoritas');
+      favoritesList.innerHTML = '<li class="no-favorites">Nenhuma música favorita ainda.</li>';
+    }
+  </script>
+</body>
+</html>
+<section class="playlist">
+  <h2>Playlist Recomendada</h2>
+  <ul id="lista-playlist">
+    <li>Rita Lee - "Ovelha Negra"</li>
+    <li>Amy Winehouse - "Back to Black"</li>
+    <li>Gal Costa - "Eternamente"</li>
+    <li>Chappel Roan - "Red Wine Supernova"</li>
+  </ul>
+</section>
+
+<section class="novidades">
+  <h2>Novidades na Música</h2>
+  <p>Fique por dentro das últimas novidades e lançamentos no mundo da música!</p>
+  <ul>
+    <li>🆕 Anúncio de novos álbuns e singles!</li>
+    <li>🎤 Entrevistas exclusivas com artistas!</li>
+    <li>🎶 Lançamentos de clipes e vídeos!</li>
+  </ul>
+</section>
+
+<section class="📝 Adicionar Comentário"></section>
+<button onclick="addComment()"></button>
+      <ul id="commentsList"></ul>
+    </section>
+  </main>
+  <!-- Seção Vídeo Edit -->
+<section class="video-edit">
+  <h2>🎬 Vídeo Edit</h2>
+  <div class="video-container">
+    <iframe src="edit/edittk.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p class="video-description">Confira esse vídeo incrível editado especialmente para você! Curta e compartilhe.</p>
+</section>
+
+<!-- Rodapé -->
+<footer>
+  <p>Feito por Kassandra & Isabele 💋</p>
+</footer>

@@ -1,0 +1,141 @@
+body { 
+  background: linear-gradient(to bottom, #dd6799f0, #fff, #e881bd, #fffafd, #f3f3f3fb );
+  font-family: 'Optima', sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1%;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video {
+  margin-bottom: 20px;
+}
+
+.titulo-principal {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo-destaque {
+  font-size: 36px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000;
+}
+
+.musicas {
+  margin-bottom: 20px;
+}
+
+.fileira {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fileira li {
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.fileira img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.controles {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.biblioteca {
+  margin-bottom: 20px;
+}
+
+#lista-musicas-pop-internacional, #lista-musicas-rock, #lista-musicas-mpb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  header {
+    margin-bottom: 10px;
+  }
+  .musicas {
+    margin-bottom: 10px;
+  }
+  .controles {
+    margin-bottom: 10px;
+  }
+  .biblioteca {
+    margin-bottom: 10px;
+  }
+  .titulo-destaque {
+    font-size: 24px;
+  }
+}
+
+/* Estilo para a seção Vídeo Edit com Degradê */
+.video-edit {
+  padding: 20px;
+  background: linear-gradient(145deg, #f59fce, #f582ff, #82f0ff); /* Degradê de rosa para roxo */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  text-align: center;
+}
+
+.video-edit h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.video-container {
+  display: inline-block;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  border: 4px solid #f04da6; /* Borda com a cor do degradê */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+}
+
+.video-description {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 15px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
